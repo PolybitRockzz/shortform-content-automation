@@ -19,17 +19,17 @@ if __name__ == "__main__":
                 txtFile.write("file '" + file + "'\n")
         #         videos.append(VideoFileClip(os.path.join("videos", file)))
         #         videos.append(VideoFileClip(os.path.join("videos", file)))
-        # # write a json file merge_data.json with filename, start time and end time with respect to total merged video
-        # with open("merge_data.json", "w") as f:
-        #     json.dump([], f)
-        # with open("merge_data.json", "r") as f:
-        #     data = json.load(f)
-        # total_time = 0
-        # for i in range(0, len(videos)):
-        #     data.append({"filename": videos[i].filename, "start": total_time + videos[i].start, "end": total_time + videos[i].end})
-        #     total_time += videos[i].duration + 5
-        # with open("merge_data.json", "w") as f:
-        #     json.dump(data, f)
+        # write a json file merge_data.json with filename, start time and end time with respect to total merged video
+        with open("merge_data.json", "w") as f:
+            json.dump([], f)
+        with open("merge_data.json", "r") as f:
+            data = json.load(f)
+        total_time = 0
+        for i in range(0, len(videos)):
+            data.append({"filename": videos[i].filename, "start": total_time + videos[i].start, "end": total_time + videos[i].end})
+            total_time += videos[i].duration + 5
+        with open("merge_data.json", "w") as f:
+            json.dump(data, f)
         # final_video = concatenate_videoclips(videos)
         # final_video.write_videofile("video_merged.mp4")
         # print("Video merged successfully!")
