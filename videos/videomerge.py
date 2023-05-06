@@ -46,6 +46,6 @@ if __name__ == "__main__":
     if choice == 3:
         for file in os.listdir("."):
             if file.endswith(".mp4"):
-                subprocess.run(["ffmpeg", "-i", file, file.substring[:len(file)-3 + "avi"]], capture_output=True, text=True)
-                subprocess.run(["ffmpeg", "-i", file.substring[:len(file)-3 + "avi", file]], capture_output=True, text=True)
+                subprocess.run(["ffmpeg", "-i", file, file[:len(file)-3 + "avi"]], capture_output=True, text=True)
+                subprocess.run(["ffmpeg", "-i", file[:len(file)-3 + "avi", file]], capture_output=True, text=True)
         print("Video files fixed successfully!")
