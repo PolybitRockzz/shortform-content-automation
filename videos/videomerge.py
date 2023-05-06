@@ -28,7 +28,7 @@ if __name__ == "__main__":
             data = json.load(f)
         total_time = 0
         for i in range(0, len(videos)):
-            data.append({"filename": videos[i].filename, "start": total_time + videos[i].start, "end": total_time + videos[i].end})
+            data.append({"filename": videos[i].filename, "start": int(total_time + videos[i].start), "end": int(total_time + videos[i].end)})
             total_time += videos[i].duration
         with open("merge_data.json", "w") as f:
             json.dump(data, f)
@@ -46,5 +46,6 @@ if __name__ == "__main__":
     if choice == 3:
         for file in os.listdir("."):
             if file.endswith(".mp4"):
-                subprocess.run(["ffmpeg", "-i", ], capture_output=True, text=True)
+                subprocess.run(["ffmpeg", "-i", file.name, file.name.substring[:len(file.name)-3 + "avi"]], capture_output=True, text=True)
+                subprocess.run(["ffmpeg", "-i", file.name.substring[:len(file.name)-3 + "avi", file.name]], capture_output=True, text=True)
         print("Video files fixed successfully!")
